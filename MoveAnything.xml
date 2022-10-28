@@ -529,7 +529,6 @@
 				</Offset>
 			</Anchor>
 		</Anchors>
-		<TitleRegion setAllPoints="true"/>
 		<Layers>
 			<Layer level="ARTWORK">
 				<Texture name="$parentFrameHeader" file="Interface\DialogFrame\UI-DialogBox-Header">

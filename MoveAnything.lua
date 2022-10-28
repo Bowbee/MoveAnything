@@ -4401,26 +4401,26 @@ function MovAny:hUpdateContainerFrameAnchors()
 		column = 1
 		highestFrame = 0
 		--visibleSpacing = VISIBLE_CONTAINER_SPACING * containerScale
-		for index, frameName in ipairs(ContainerFrame1.bags) do
-			frame = MARefBlizzBags[frameName]
-			if frame == nil then
-				frame = _G[frameName]
-				MARefBlizzBags[frameName] = frame
-			end
-			bag = MovAny:GetBagInContainerFrame(frame)
-			if not bag or (bag and not MovAny:IsModified(bag, "pos") and not MovAny:GetMoverByFrame(bag)) then
-				frameHeight = frame:GetHeight() --* containerScale
+		-- for index, frameName in ipairs(ContainerFrame1.bags) do
+		-- 	frame = MARefBlizzBags[frameName]
+		-- 	if frame == nil then
+		-- 		frame = _G[frameName]
+		-- 		MARefBlizzBags[frameName] = frame
+		-- 	end
+		-- 	bag = MovAny:GetBagInContainerFrame(frame)
+		-- 	if not bag or (bag and not MovAny:IsModified(bag, "pos") and not MovAny:GetMoverByFrame(bag)) then
+		-- 		frameHeight = frame:GetHeight() --* containerScale
 
-				if yRemaining < frameHeight + VISIBLE_CONTAINER_SPACING then
-					column = column + 1
-					yRemaining = yAvail
-				end
-				if frameHeight > highestFrame then
-					highestFrame = frameHeight
-				end
-				yRemaining = yRemaining - frameHeight - VISIBLE_CONTAINER_SPACING
-			end
-		end
+		-- 		if yRemaining < frameHeight + VISIBLE_CONTAINER_SPACING then
+		-- 			column = column + 1
+		-- 			yRemaining = yAvail
+		-- 		end
+		-- 		if frameHeight > highestFrame then
+		-- 			highestFrame = frameHeight
+		-- 		end
+		-- 		yRemaining = yRemaining - frameHeight - VISIBLE_CONTAINER_SPACING
+		-- 	end
+		-- end
 		if highestFrame > yAvail or column * ((CONTAINER_WIDTH --[[* containerScale]]) + VISIBLE_CONTAINER_SPACING) > xAvail then
 			containerScale = containerScale - .01
 		else

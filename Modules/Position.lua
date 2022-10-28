@@ -42,9 +42,9 @@ local m = {
 			if opt.orgPos == nil and not MovAny:IsContainer(f:GetName()) and string.match("BagFrame", f:GetName()) ~= nil then
 				self:StoreOrgPoints(f, opt)
 			end
-			if UIPARENT_MANAGED_FRAME_POSITIONS[fn] then
-				f.ignoreFramePositionManager = true
-			end
+			-- if UIPARENT_MANAGED_FRAME_POSITIONS[fn] then
+			-- 	f.ignoreFramePositionManager = true
+			-- end
 			MovAny:UnlockPoint(f)
 			f:ClearAllPoints()
 			if f.MASetPoint then
