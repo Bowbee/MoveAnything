@@ -3949,26 +3949,26 @@ function MovAny:SyncUIPanel(mn, f)
 				end
 				MovAny.pendingActions[f:GetName()..":UIPanel"] = closure(f)
 			else
-				MovAny:UnlockPoint(f)
-				f:ClearAllPoints()
-				local UIPOpt = UIPanelWindows[f:GetName()]
-				local x = 0
-				local y = 0
-				if not UIPOpt or not UIPOpt.xoffset then
-					x = 16
-					y  = -12
-				end
-				f:SetPoint("TOPLEFT", mn, "TOPLEFT", x, y)
+				-- MovAny:UnlockPoint(f)
+				-- f:ClearAllPoints()
+				-- local UIPOpt = UIPanelWindows[f:GetName()]
+				-- local x = 0
+				-- local y = 0
+				-- if not UIPOpt or not UIPOpt.xoffset then
+				-- 	x = 16
+				-- 	y  = -12
+				-- end
+				-- f:SetPoint("TOPLEFT", mn, "TOPLEFT", x, y)
 
-				if not f.MAOrgScale then
-					f.MAOrgScale = f:GetScale()
-				end
-				f:SetScale(mover:GetScale())
+				-- if not f.MAOrgScale then
+				-- 	f.MAOrgScale = f:GetScale()
+				-- end
+				-- f:SetScale(mover:GetScale())
 
-				if not f.MAOrgAlpha then
-					f.MAOrgAlpha = f:GetAlpha()
-				end
-				f:SetAlpha(mover:GetAlpha())
+				-- if not f.MAOrgAlpha then
+				-- 	f.MAOrgAlpha = f:GetAlpha()
+				-- end
+				-- f:SetAlpha(mover:GetAlpha())
 			end
 		elseif f.MAOrgScale or f.MAOrgAlpha then
 			if MovAny:IsProtected(f) and InCombatLockdown() then
