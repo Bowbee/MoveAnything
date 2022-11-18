@@ -15,13 +15,13 @@
 					if self.realID == KEYRING_CONTAINER then
 						self.size = GetKeyRingSize()
 					else
-						self.size = GetContainerNumSlots(self.realID)
+						<!-- self.size = GetContainerNumSlots(self.realID) -->
 					end
 					MovAny:SetBag(self.realID, self)
 				end
 				self.OnMAHook = function(self)
 					if self.size == 0 and self.realID ~= KEYRING_CONTAINER then
-						self.size = GetContainerNumSlots(self.realID)
+						<!-- self.size = GetContainerNumSlots(self.realID) -->
 					end
 					local conSettings = self.realID == 0 and MovAny.CONTAINER_FRAME_TABLE[0] or MovAny.CONTAINER_FRAME_TABLE[self.size ~= 0 and self.size or 20]
 					self:SetWidth(CONTAINER_WIDTH)

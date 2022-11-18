@@ -52,7 +52,7 @@
 				</Anchors>
 				<Scripts>
 					<OnLoad>
-						self:ApplyBackdrop()
+						<!-- self:ApplyBackdrop() -->
 						_G[self:GetName().."Text"]:SetText("# of rows")
 						_G[self:GetName().."High"]:SetText("100")
 						_G[self:GetName().."Low"]:SetText("2")
