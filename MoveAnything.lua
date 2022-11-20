@@ -5214,7 +5214,7 @@ function MovAny:SetOptions()
 	else
 		MADB.closeGUIOnEscape = false
 	end
-	MADB.squareMM = MAOptsSquareMM:GetChecked()
+	MADB.squareMM = MAOptSquareMM:GetChecked()
 	MADB.dontHookCreateFrame = MAOptDontHookCreateFrame:GetChecked()
 	MADB.dontSyncWhenLeavingCombat = MAOptDontSyncWhenLeavingCombat:GetChecked()
 	MADB.dontSearchFrameNames = MAOptDontSearchFrameNames:GetChecked()
@@ -5416,6 +5416,7 @@ function MovAny:SetNumRows(num, dontUpdate)
 		end
 	end
 	_G["MAOptRowsSliderText"]:SetText(num)
+	_G["MAOptRowsSlider"]:SetValue(num)
 	if not dontUpdate then
 		self:UpdateGUIIfShown(true)
 	end
